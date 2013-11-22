@@ -1,6 +1,6 @@
 " フォント設定
 set antialias
-set guifont=ゆたぽん（コーディング）:h12:cSHIFTJIS
+set guifont=ゆたぽん（コーディング）:h12
 set ambiwidth=double
 
 " カーソル設定
