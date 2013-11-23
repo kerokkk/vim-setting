@@ -1,13 +1,13 @@
-" ƒtƒHƒ“ƒgİ’è
+" ãƒ•ã‚©ãƒ³ãƒˆè¨­å®š
 set antialias
-set guifont=‚ä‚½‚Û‚ñiƒR[ƒfƒBƒ“ƒOj:h12
+set guifont=ã‚†ãŸã½ã‚“ï¼ˆã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ï¼‰\ 12
 set ambiwidth=double
 
-" ƒJ[ƒ\ƒ‹İ’è
-" IME ON‚ÌƒJ[ƒ\ƒ‹‚ÌF‚ğİ’è(İ’è—á:‡)
+" ã‚«ãƒ¼ã‚½ãƒ«è¨­å®š
+" IME ONæ™‚ã®ã‚«ãƒ¼ã‚½ãƒ«ã®è‰²ã‚’è¨­å®š(è¨­å®šä¾‹:ç´«)
 highlight CursorIM guibg=Blue guifg=NONE
-" ‘}“üƒ‚[ƒhEŒŸõƒ‚[ƒh‚Å‚ÌƒfƒtƒHƒ‹ƒg‚ÌIMEó‘Ôİ’è
+" æŒ¿å…¥ãƒ¢ãƒ¼ãƒ‰ãƒ»æ¤œç´¢ãƒ¢ãƒ¼ãƒ‰ã§ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®IMEçŠ¶æ…‹è¨­å®š
 set iminsert=0 imsearch=0
 
-" ƒƒjƒ…[•\¦
+" ãƒ¡ãƒ‹ãƒ¥ãƒ¼è¡¨ç¤º
 set guioptions=acmgr

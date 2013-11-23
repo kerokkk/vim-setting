@@ -10,8 +10,10 @@ set shellslash              " windowsでパスに/を使えるように
 "--------------------------------------------------{{{
 if has('win32') || has('win64')
     let $VIMFILES=$HOME. '/vimfiles'
+    let $VIMSETTINGS=$VIMFILES. '/mysettings'
 else
     let $VIMFILES=$HOME. '/.vim'
+    let $VIMSETTINGS=$VIMFILES. '/mysettings'
 endif
 " }}}
 
@@ -104,6 +106,9 @@ augroup lcd
 	au BufEnter * lcd %:p:h
 augroup END
 
+" 存在しないファイルもgfで開けるようにする
+nnoremap gf :e <cfile><CR>
+
 set showmatch               " カッコの対応するものをハイライト
 set autoindent
 set wildmenu                " コマンドラインでの補完を強化
@@ -121,7 +126,7 @@ set t_vb=
 
 " ステータスライン
 set laststatus=2            " ステータスラインの表示
-set statusline=%.50f\ %m%r%h%q%=%l/%L\ %y\ [%{&fenc}]\ [%{&ff}]
+set statusline=%.50f\ %m%h%q%=%l/%L\ %y\ [%{&fenc}]\ [%{&ff}]
 set cmdheight=2
 
 set number
@@ -156,7 +161,7 @@ endif
 " }}}
 
 " キーマッピング
-so $VIMFILES/mysettings/keymap.vim
+so $VIMSETTINGS/keymap.vim
 
 " プラグイン設定
-so $VIMFILES/mysettings/plugin.vim
+so $VIMSETTINGS/plugin.vim

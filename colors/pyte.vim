@@ -16,7 +16,7 @@ if version >= 700
   "Tabpages
   hi TabLine guifg=black guibg=#b0b8c0 
   hi TabLineFill guifg=#9098a0
-  hi TabLineSel guifg=black guibg=#f0f0f0 
+  hi TabLineSel guifg=black guibg=#f0f0f0 gui=bold
 
   "P-Menu (auto-completion)
   hi Pmenu guifg=white guibg=#808080
@@ -61,9 +61,9 @@ hi Statement  guifg=#007020 gui=bold
 hi Type       guifg=#e5a00d 
 " Python: Standard exceptions, True&False
 hi Structure  guifg=#007020 
-hi Function   guifg=#06287e 
+hi Function   guifg=#06287e
 
-hi Identifier guifg=#5b3674 
+hi Identifier guifg=#5b3674
 
 hi Repeat      guifg=#7fbf58 gui=bold
 hi Conditional guifg=#4c8f2f gui=bold
@@ -82,7 +82,7 @@ hi Special    guifg=#70a0d0
 hi Operator   guifg=#408010
 
 " color of <TAB>s etc...  
-"hi SpecialKey guifg=#d8a080 guibg=#e8e8e8 
+"hi SpecialKey guifg=#d8a080 guibg=#e8e8e8
 hi SpecialKey guifg=#d0b0b0 guibg=#f0f0f0 gui=none
 
 " Diff
