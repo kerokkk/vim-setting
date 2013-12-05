@@ -9,3 +9,5 @@ so $VIMSETTINGS/neocomplete.vim
 so $VIMSETTINGS/vimsingleton.vim
 
 so $VIMSETTINGS/gundo.vim
+
+so $VIMSETTINGS/neosnippet.vim

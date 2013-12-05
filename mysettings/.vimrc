@@ -1,3 +1,5 @@
+scriptencoding cp932
+
 set nocompatible
 
 filetype plugin indent on
@@ -162,6 +164,9 @@ if version >= 703
     set undodir=$HOME/.vimwork
 endif
 " }}}
+
+" TINA開発用設定
+so $VIMSETTINGS/tinadev.vim
 
 " キーマッピング
 so $VIMSETTINGS/keymap.vim

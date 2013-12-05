@@ -1,6 +1,12 @@
+scriptencoding cp932
+
 " フォント設定
 set antialias
-set guifont=ゆたぽん（コーディング）:h12
+if has('win32') || has('win64')
+    set guifont=ゆたぽん（コーディング）:h12
+elseif has('unix')
+    set guifont=ゆたぽん（コーディング）\ 12
+endif
 set ambiwidth=double
 
 " カーソル設定
