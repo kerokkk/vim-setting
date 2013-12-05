@@ -38,6 +38,9 @@ set ignorecase
 set smartcase
 set wrapscan
 set history=100
+
+" 外部grep設定
+set grepprg=grep\ -nH
 " }}}
 
 "--------------------------------------------------
@@ -57,9 +60,9 @@ set smarttab                " tabを押したら適切な位置までインデント
 augroup fold
     au!
     au FileType * set foldmethod=marker
-    au FileType cpp,cc,c,java,py set foldmethod=indent
-    au FileType cpp,cc,c,py set foldnestmax=1
-    au FileType java set foldnestmax=2
+    " au FileType cpp,cc,c,java,py set foldmethod=indent
+    " au FileType cpp,cc,c,py set foldnestmax=1
+    " au FileType java set foldnestmax=2
 augroup END
 
 " 補完設定
@@ -112,7 +115,7 @@ nnoremap gf :e <cfile><CR>
 set showmatch               " カッコの対応するものをハイライト
 set autoindent
 set wildmenu                " コマンドラインでの補完を強化
-set autoread                " 外部で変更されたときは自動で読み込み
+set noautoread                " 外部で変更されたときは自動で読み込まない
 set virtualedit=block       " 矩形範囲選択時にテキストの外の領域まで選択できるようにする
 " }}}
 

@@ -1,4 +1,6 @@
+gundo.vim
 neobundle.vim
 neocomplete
 unite.vim
+vim-singleton
 vimproc

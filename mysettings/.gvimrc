@@ -1,13 +1,32 @@
-" ãƒ•ã‚©ãƒ³ãƒˆè¨­å®š
+" ƒtƒHƒ“ƒgİ’è
 set antialias
-set guifont=ã‚†ãŸã½ã‚“ï¼ˆã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ï¼‰\ 12
+set guifont=‚ä‚½‚Û‚ñiƒR[ƒfƒBƒ“ƒOj:h12
 set ambiwidth=double
 
-" ã‚«ãƒ¼ã‚½ãƒ«è¨­å®š
-" IME ONæ™‚ã®ã‚«ãƒ¼ã‚½ãƒ«ã®è‰²ã‚’è¨­å®š(è¨­å®šä¾‹:ç´«)
+" ƒJ[ƒ\ƒ‹İ’è
+" IME ON‚ÌƒJ[ƒ\ƒ‹‚ÌF‚ğİ’è(İ’è—á:‡)
 highlight CursorIM guibg=Blue guifg=NONE
-" æŒ¿å…¥ãƒ¢ãƒ¼ãƒ‰ãƒ»æ¤œç´¢ãƒ¢ãƒ¼ãƒ‰ã§ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®IMEçŠ¶æ…‹è¨­å®š
+" ‘}“üƒ‚[ƒhEŒŸõƒ‚[ƒh‚Å‚ÌƒfƒtƒHƒ‹ƒg‚ÌIMEó‘Ôİ’è
 set iminsert=0 imsearch=0
 
-" ãƒ¡ãƒ‹ãƒ¥ãƒ¼è¡¨ç¤º
-set guioptions=acmgr
+" ƒƒjƒ…[•\¦
+set guioptions=aecmgrb
+
+" ƒEƒBƒ“ƒhƒE‚Ì‘å‚«‚³‚ğ•Û‘¶
+let g:save_window_file = expand('~/.vimwinpos')
+augroup SaveWindow
+  autocmd!
+  autocmd VimLeavePre * call s:save_window()
+  function! s:save_window()
+    let options = [
+      \ 'set columns=' . &columns,
+      \ 'set lines=' . &lines,
+      \ 'winpos ' . getwinposx() . ' ' . getwinposy(),
+      \ ]
+    call writefile(options, g:save_window_file)
+  endfunction
+augroup END
+
+if filereadable(g:save_window_file)
+  execute 'source' g:save_window_file
+endif
