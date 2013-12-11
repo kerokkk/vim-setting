@@ -2,10 +2,10 @@
 " Maintainer:	Keizaburo Takase
 " Last Change:	2013/12/05
 
-syn keyword ERROR       Error
-syn keyword INFORMATION Info[rmation]
-syn keyword WARNING     Warning
-syn keyword TRACE       Programtrace
+syn keyword ERROR       Error   
+syn keyword INFORMATION Info[rmation]   
+syn keyword WARNING     Warning 
+syn keyword TRACE       ProgramTrace    
 
 hi  def link    ERROR           ErrorMsg
 hi  def link    INFORMATION     ColorColumn
