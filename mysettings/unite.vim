@@ -36,10 +36,36 @@ augroup END
 "unite_enable_start_insertnite実行後に即入力モードに
 let g:unite_enable_start_insert = 1
 "高さ設定
-let g:unite_winheight=10
+let g:unite_winheight=15
 "Uniteが設定ファイルを管理するディレクトリ．
 let g:unite_data_directory = $HOME . '/.unite'
 " ヤンクリストを有効にする
 let g:unite_source_history_yank_enable = 1
 " 絞込みテキストを入力してから反映されるまでの時間
 let g:unite_update_time = 100
+
+" ランチャ設定
+let s:unite_source = {
+\   "name" : "command_launcher"
+\}
+
+function! s:unite_source.gather_candidates(args, context)
+    let cmds = {
+\       "EqBoot"  : "!EqBoot",
+\       "Ns300pKill"      : "!Ns300pKill",
+\       "CreateConfigAndMake"    : "!CreateConfigAndMake",
+\       "Make Source" : "!make source"
+\   }
+
+    return values(map(cmds, "{
+\       'word' : v:key,
+\       'source' : 'command_launcher',
+\       'kind' : 'command',
+\       'action__command' : v:val
+\   }"))
+endfunction
+
+call unite#define_source(s:unite_source)
+
+" 呼び出しのキーマップ
+nnoremap <silent> <Leader>c :Unite command_launcher<CR>
