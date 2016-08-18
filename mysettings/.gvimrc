@@ -3,9 +3,9 @@ scriptencoding cp932
 " フォント設定
 set antialias
 if has('win32') || has('win64')
-    set guifont=ゆたぽん（コーディング）:h12
+    set guifont=ゆたぽん（コーディング）:h11
 elseif has('unix')
-    set guifont=ゆたぽん（コーディング）\ 12
+    set guifont=ゆたぽん（コーディング）\ 11
 endif
 set ambiwidth=double
 
@@ -18,21 +18,10 @@ set iminsert=0 imsearch=0
 " メニュー表示
 set guioptions=aecmgrb
 
-" ウィンドウの大きさを保存
-let g:save_window_file = expand('~/.vimwinpos')
-augroup SaveWindow
-  autocmd!
-  autocmd VimLeavePre * call s:save_window()
-  function! s:save_window()
-    let options = [
-      \ 'set columns=' . &columns,
-      \ 'set lines=' . &lines,
-      \ 'winpos ' . getwinposx() . ' ' . getwinposy(),
-      \ ]
-    call writefile(options, g:save_window_file)
-  endfunction
-augroup END
-
-if filereadable(g:save_window_file)
-  execute 'source' g:save_window_file
+" 最大化して開く
+if has('win32') || has('win64')
+    augroup gui
+        au!
+        au GUIEnter * simalt ~x
+    augroup END
 endif

@@ -21,6 +21,8 @@ nnoremap <silent> <Leader>ua    :<C-u>Unite -buffer-name=all buffer file_mru boo
 nnoremap <silent> <Leader>uh    :<C-u>Unite -buffer-name=help -start-insert help<CR>
 " grep
 nnoremap <silent> <Leader>ug    :<C-u>Unite -buffer-name=grep -start-insert grep<CR>
+" 呼び出しのキーマップ
+nnoremap <silent> <Leader>c :Unite command_launcher<CR>
 augroup unite
     au!
     " 終了
@@ -44,28 +46,4 @@ let g:unite_source_history_yank_enable = 1
 " 絞込みテキストを入力してから反映されるまでの時間
 let g:unite_update_time = 100
 
-" ランチャ設定
-let s:unite_source = {
-\   "name" : "command_launcher"
-\}
-
-function! s:unite_source.gather_candidates(args, context)
-    let cmds = {
-\       "EqBoot"  : "!EqBoot",
-\       "Ns300pKill"      : "!Ns300pKill",
-\       "CreateConfigAndMake"    : "!CreateConfigAndMake",
-\       "Make Source" : "!make source"
-\   }
-
-    return values(map(cmds, "{
-\       'word' : v:key,
-\       'source' : 'command_launcher',
-\       'kind' : 'command',
-\       'action__command' : v:val
-\   }"))
-endfunction
-
-call unite#define_source(s:unite_source)
-
-" 呼び出しのキーマップ
-nnoremap <silent> <Leader>c :Unite command_launcher<CR>
+" call unite#define_source(s:unite_source)

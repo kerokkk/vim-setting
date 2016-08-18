@@ -9,7 +9,7 @@ set shellslash              " windowsでパスに/を使えるように
 
 "--------------------------------------------------
 " パスの設定
-"--------------------------------------------------{{{
+"--------------------------------------------------
 if has('win32') || has('win64')
     let $VIMFILES=$HOME. '/vimfiles'
     let $VIMSETTINGS=$VIMFILES. '/mysettings'
@@ -17,11 +17,9 @@ else
     let $VIMFILES=$HOME. '/.vim'
     let $VIMSETTINGS=$VIMFILES. '/mysettings'
 endif
-" }}}
-
 "--------------------------------------------------
 " 文字コード、改行コード設定
-"--------------------------------------------------{{{
+"--------------------------------------------------
 set fileencodings=utf-8,euc-jp,iso-2022-jp-3,iso-2022-jp,euc-jisx0213,ucs-bom,euc-jp,eucjp-ms,cp932
 set fileformats=unix,dos
 if has('win32') || has('win64')
@@ -29,12 +27,12 @@ if has('win32') || has('win64')
 else
     set encoding=utf-8
 endif
-" }}}
+
 
 
 "--------------------------------------------------
 " 検索設定
-"--------------------------------------------------{{{
+"--------------------------------------------------
 set hlsearch
 set ignorecase
 set smartcase
@@ -43,11 +41,11 @@ set history=100
 
 " 外部grep設定
 set grepprg=grep\ -nH
-" }}}
+
 
 "--------------------------------------------------
 " 編集設定
-"--------------------------------------------------{{{
+"--------------------------------------------------
 " タブの設定
 set tabstop=4               " タブの画面上での幅
 set softtabstop=4           " タブキーを押したとき停止する位置
@@ -57,15 +55,6 @@ set list
 set listchars=tab:>-
 set backspace=2             " backspaceで改行やインデントを削除できるようにする
 set smarttab                " tabを押したら適切な位置までインデント
-
-" folding設定
-augroup fold
-    au!
-    au FileType * set foldmethod=marker
-    " au FileType cpp,cc,c,java,py set foldmethod=indent
-    " au FileType cpp,cc,c,py set foldnestmax=1
-    " au FileType java set foldnestmax=2
-augroup END
 
 " 補完設定
 set completeopt=menu,menuone,longest
@@ -119,11 +108,11 @@ set autoindent
 set wildmenu                " コマンドラインでの補完を強化
 set noautoread                " 外部で変更されたときは自動で読み込まない
 set virtualedit=block       " 矩形範囲選択時にテキストの外の領域まで選択できるようにする
-" }}}
+
 
 "--------------------------------------------------
 " 画面表示設定
-"--------------------------------------------------{{{
+"--------------------------------------------------
 " ベルの設定
 set noerrorbells
 set novisualbell
@@ -139,11 +128,11 @@ set wrap
 set title
 syntax enable
 colorscheme pyte
-" }}}
+
 
 "--------------------------------------------------
 " バックアップの設定
-"--------------------------------------------------{{{
+"--------------------------------------------------
 set backup
 set writebackup
 
@@ -163,7 +152,7 @@ set backupdir=$HOME/.vimwork
 if version >= 703
     set undodir=$HOME/.vimwork
 endif
-" }}}
+
 
 " TINA開発用設定
 so $VIMSETTINGS/tinadev.vim
